@@ -70,51 +70,20 @@ const SignUp = () => {
                     id="userPassword"
                     onChange={event => onChangeHandler(event)}
                 />
-
-                <button>
-                    Sign in 
+                <button className="newUser" onClick={event => {
+                    createUserWithEmailAndPassword(event,email,password);
+                }}>
+                    Sign Up
                 </button>
-            
-
-
-
-
-
-        </form>
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </form>
+            <p className="text-center my-3" >
+                Already have an account? {""}
+                <Link to ="/" className="text-blue-500 hover: text-blue-600">
+                Sign in here
+                </Link>
+            </p>
         </div>
     )
-
-
-
-
 }
 
 
