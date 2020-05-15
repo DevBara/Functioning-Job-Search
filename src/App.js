@@ -1,5 +1,6 @@
 import React from 'react';
 import SignIn from './components/SignIn'
+import SignUp from './components/SignUp'
 
 
 import './App.css';
@@ -7,7 +8,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-    <SignIn/>
+    <SignIn />
+    <SignUp />
     
     </div>
   );
