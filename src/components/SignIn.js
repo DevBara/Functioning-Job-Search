@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "@reach/router";
-import { signInWithGoogle } from "../firebase";
+import {signInWithGoogle } from "../firebase";
 import {auth} from "../firebase";
 
 const SignIn = () => {

@@ -83,8 +83,10 @@ const SignUp = () => {
                 </Link>
             </p>
         </div>
+        </div>
     )
 }
+
 
 
 export default SignUp;
