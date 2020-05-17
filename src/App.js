@@ -4,6 +4,7 @@ import UserProvider from './providers/UserProvider'
 import Application from "./components/Application";
 import SearchPage from "./components/SearchPage"
 import Home from './components/Home';
+import ProfilePage from "./components/ProfilePage";
 
 
 
@@ -13,8 +14,8 @@ function App() {
   return (
     <UserProvider>
       <Router>
-        <div>
-          <nav>
+        <div className="App">
+          <nav className="navbar">
             <ul>
               <li>
                 <Link className="" to ="/Home"> Home</Link>
@@ -22,11 +23,15 @@ function App() {
               <li>
                 <Link className="" to ="/searchpage"> Search Jobs</Link>
               </li>
+              <li>
+                <Link className="" to ="/profile">Profile</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
             <Route path="/Home" component={Home} />
             <Route path="/SearchPage" component={SearchPage} />
+            <Route path="/profile" component={ProfilePage} />
           </Switch>
         </div>
      </Router>
