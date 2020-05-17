@@ -1,3 +1,4 @@
+import firebase from "firebase/app";
 import React, {useState} from "react";
 import {Link} from "@reach/router";
 import {signInWithGoogle } from "../firebase";
@@ -5,24 +6,15 @@ import {auth} from "../firebase";
 
 
  
-const SignIn = ({history}) => {
-    //Sign In variables
+const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-
-//Firebase default variable 
-    const signInWithEmailAndPasswordHandler = (event, email,password) => {
+    const signInWithEmailAndPasswordHandler = 
+            (event, email,password) => {
                 event.preventDefault();
+            }
 
-                auth.signInWithEmailAndPassword(email,password).then(res => {
-                    if (res.user) auth.setLoggedIn(true);
-                    history.push('/home')
-                })
-                    .catch(e => {
-                    setError("Error signing in with password and email", error);
-                });
-            };
 
             //event to handle user input
         const onChangeHandler = (event) => {
@@ -33,7 +25,23 @@ const SignIn = ({history}) => {
         } else if (name === 'userPassword'){
             setPassword(value);
         }
+
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            // let errorCode = error.code;
+            console.log(error.Message);
+    
+        });
+    
+        firebase.auth().onAuthStateChanged(name => {
+            if(name === 'userEmail' && name === 'userPassword') {
+              window.location = 'home.js'; //After successful login, user will be redirected to home.html
+            }
+          });
     };
+
+  
+    
 
 
     return (
@@ -91,7 +99,9 @@ const SignIn = ({history}) => {
             </div>
         </div>
     );
+
 }
-                    
+
+
 export default SignIn;
 
