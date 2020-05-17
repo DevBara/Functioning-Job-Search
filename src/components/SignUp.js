@@ -1,30 +1,40 @@
-import React, {useState} from "react";
-import {Link} from "@reach/router";
+import React, { useState } from "react";
+import { Link } from "@reach/router";
+import { auth, signInWithGoogle, generateUserDocument } from "../firebase";
 
 const SignUp = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [displayName, setDisplayName] = useState("");
-    const [error, setError] = useState(null);
-    const createUserWithEmailAndPassword = (event, email, password) => {
-        event.preventDefault();
-        setEmail("");
-        setPassword("");
-        setDisplayName("");
-    };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [displayName, setDisplayName] = useState("");
+  const [error, setError] = useState(null);
 
+  const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
+    event.preventDefault();
+    try{
+      const {user} = await auth.createUserWithEmailAndPassword(email, password);
+      generateUserDocument(user, {displayName});
+      alert ('You have successfully signed up');
+    }
+    catch(error){
+      setError('Error Signing up with email and password');
+    }
+      
+    setEmail("");
+    setPassword("");
+    setDisplayName("");
+  };
 
-    const onChangeHandler = event => {
-        const {name, value} = event.currentTarget;
+  const onChangeHandler = event => {
+    const { name, value } = event.currentTarget;
 
-        if(name === "userEmail"){
-            setEmail(value);
-        } else if (name === "userPassword"){
-            setPassword(value);
-        } else if (name === "displayName"){
-            setDisplayName(value);
-        }
-    };
+    if (name === "userEmail") {
+      setEmail(value);
+    } else if (name === "userPassword") {
+      setPassword(value);
+    } else if (name === "displayName") {
+      setDisplayName(value);
+    }
+  };
 
     return (
         <div className="SignUpWrapper">
@@ -71,20 +81,29 @@ const SignUp = () => {
                     onChange={event => onChangeHandler(event)}
                 />
                 <button className="newUser" onClick={event => {
-                    createUserWithEmailAndPassword(event,email,password);
+                    createUserWithEmailAndPasswordHandler(event,email,password);
                 }}>
                     Sign Up
                 </button>
             </form>
+            <button onClick={() => {
+                try{
+                    signInWithGoogle();
+                } catch (error){
+                    console.error("Error signing in with Google", error)
+                }
+            }}>
+                Sign in With Google
+            </button>
             <p className="text-center my-3" >
                 Already have an account? {""}
                 <Link to ="/" className="text-blue-500 hover: text-blue-600">
                 Sign in here
                 </Link>
             </p>
+          </div>
         </div>
     )
 }
-
 
 export default SignUp;
