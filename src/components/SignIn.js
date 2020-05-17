@@ -3,23 +3,29 @@ import {Link} from "@reach/router";
 import { signInWithGoogle } from "../firebase";
 import {auth} from "../firebase";
 
-const SignIn = () => {
+
+ 
+const SignIn = ({history}) => {
+    //Sign In variables
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
 
-
+//Firebase default variable 
     const signInWithEmailAndPasswordHandler = (event, email,password) => {
                 event.preventDefault();
 
-                auth.signInWithEmailAndPassword(email,password).catch(error => {
+                auth.signInWithEmailAndPassword(email,password).then(res => {
+                    if (res.user) auth.setLoggedIn(true);
+                    history.push('/home')
+                })
+                    .catch(e => {
                     setError("Error signing in with password and email", error);
                 });
             };
 
-
-
-    const onChangeHandler = (event) => {
+            //event to handle user input
+        const onChangeHandler = (event) => {
         const {name, value} = event.currentTarget;
 
         if (name === 'userEmail'){
@@ -29,12 +35,13 @@ const SignIn = () => {
         }
     };
 
+
     return (
 
         <div>
             <h1>Sign In</h1>
             <div className="border">
-            {error !== null && <div className = "py-4 bg-red-600 w-full text-white text-center mb-3">{error}</div>}
+            {error !== null && <div>{error}</div>}
                 <form className="signInForm">
                     <label htmlFor="userEmail" className ="block">
                         Email:
@@ -84,7 +91,7 @@ const SignIn = () => {
             </div>
         </div>
     );
-};
-    
-    export default SignIn;
+}
+                    
+export default SignIn;
 

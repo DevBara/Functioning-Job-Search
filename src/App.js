@@ -1,18 +1,20 @@
-import React from 'react';
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
+import React from "react";
+import UserProvider from './providers/UserProvider'
+import Application from "./components/Application";
 
-
-import './App.css';
 
 function App() {
+
+
   return (
-    <div className="App">
-    <SignIn />
-    <SignUp />
-    
-    </div>
+    <UserProvider>
+      <Application />
+    </UserProvider>
   );
 }
+
+
+
+
 
 export default App;
