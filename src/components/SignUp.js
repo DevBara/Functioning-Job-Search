@@ -5,14 +5,13 @@ import { auth, signInWithGoogle, generateUserDocument } from "../firebase";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState(null);
 
   const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
     event.preventDefault();
     try{
       const {user} = await auth.createUserWithEmailAndPassword(email, password);
-      generateUserDocument(user, {displayName});
+      generateUserDocument(user);
       alert ('You have successfully signed up');
     }
     catch(error){
@@ -21,7 +20,7 @@ const SignUp = () => {
       
     setEmail("");
     setPassword("");
-    setDisplayName("");
+  
   };
 
   const onChangeHandler = event => {
@@ -31,8 +30,6 @@ const SignUp = () => {
       setEmail(value);
     } else if (name === "userPassword") {
       setPassword(value);
-    } else if (name === "displayName") {
-      setDisplayName(value);
     }
   };
 
@@ -47,17 +44,6 @@ const SignUp = () => {
         )}
 
             <form className="displayForm">
-                <label htmlFor ="displayName" className="SignUpLabel">
-                   Display Name:
-                </label>
-                <input
-                   type="text"
-                   name="displayName"
-                   value={displayName}
-                   placeholder = "Display Name"
-                   id="displayName"
-                   onChange={event => onChangeHandler(event)}
-                />
                 <label htmlFor ="userEmail" className="SignUpLabel">
                    Email:
                 </label>
