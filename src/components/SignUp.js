@@ -36,14 +36,14 @@ const SignUp = () => {
     return (
         <div className="SignUpWrapper">
             <h1 className="SignUpTitle">Sign Up</h1>
-            <div className ="SignUpChild">
+            <div className ="SignUpParent">
                {error !== null && (
                   <div className= "error">
                     {error}
             </div>
         )}
 
-            <form className="displayForm">
+            <form className="SignUpDisplayForm">
                 <label htmlFor ="userEmail" className="SignUpLabel">
                    Email:
                 </label>
@@ -54,6 +54,7 @@ const SignUp = () => {
                    placeholder = "user@gmail.com"
                    id="userEmail"
                    onChange={event => onChangeHandler(event)}
+                   className="emailInput"
                 />
                 <label htmlFor="userPassword" className="SignUpLabel">
                     Password:
@@ -65,6 +66,7 @@ const SignUp = () => {
                     placeholder="Your Password"
                     id="userPassword"
                     onChange={event => onChangeHandler(event)}
+                    className="passwordInput"
                 />
                 <button className="newUser" onClick={event => {
                     createUserWithEmailAndPasswordHandler(event,email,password);
@@ -72,7 +74,7 @@ const SignUp = () => {
                     Sign Up
                 </button>
             </form>
-            <button className="googleSignIn" onClick={() => {
+            <button className="googleSignInBtn" onClick={() => {
                 try{
                     signInWithGoogle();
                 } catch (error){
