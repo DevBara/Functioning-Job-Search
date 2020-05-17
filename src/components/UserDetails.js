@@ -11,7 +11,7 @@ export default class UserDetails extends Component {
             highlights:'Brag a little; You\'ve earned it',
             editing: false,
             inputDisplay: 'none',
-            detailsDisplay: 'inherit'
+            detailsDisplay: 'block'
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSave = this.handleSave.bind(this);
@@ -21,7 +21,7 @@ export default class UserDetails extends Component {
     handleEdit(e){
         this.setState({
             editing: true,
-            inputDisplay: 'inherit',
+            inputDisplay: 'block',
             detailsDisplay: 'none'
         })
     }
@@ -36,7 +36,7 @@ export default class UserDetails extends Component {
         this.setState({
             editing: false,
             inputDisplay: 'none',
-            detailsDisplay: 'inherit'
+            detailsDisplay: 'block'
         });
 
     }
@@ -47,9 +47,9 @@ export default class UserDetails extends Component {
             <div id="details-wrapper" style={{display:'flex', width:'60%', flexDirection:'column', alignItems:'center'}}>
                 <div id="name-wrap">
                 
-                    <p className="details-display" id="name-display" style={{display:this.state.detailsDisplay}}>
+                    <div className="details-display" id="name-display" style={{display:this.state.detailsDisplay}}>
                         {this.state.name}
-                    </p>
+                    </div>
                     
                     <input type="text" placeholder="Name" name="name" className="details-input" 
                     id="name-input" onChange={this.handleChange} style={{display:this.state.inputDisplay}}></input>
@@ -58,16 +58,16 @@ export default class UserDetails extends Component {
 
                 <div id="location-and-email-wrap">
                     
-                    <p className="details-display" id="location-display" style={{display:this.state.detailsDisplay}}>
+                    <div className="details-display" id="location-display" style={{display:this.state.detailsDisplay}}>
                         {this.state.location}
-                    </p>
+                    </div>
 
                     <input type="text" className="details-input" placeholder="City, State" name="location" 
                     id="location-input" onChange={this.handleChange} style={{display:this.state.inputDisplay}}></input>
 
-                    <p className="details-display" id="email-url-display" style={{display:this.state.detailsDisplay}}> 
+                    <div className="details-display" id="email-url-display" style={{display:this.state.detailsDisplay}}> 
                         {this.state.emailOrURL}
-                    </p>
+                    </div>
 
                     <input type="text" className="details-input" placeholder="Email or Website" name="emailOrURL" 
                     id="email-input" onChange={this.handleChange} style={{display:this.state.inputDisplay}}></input>
@@ -75,9 +75,9 @@ export default class UserDetails extends Component {
                 </div>
 
                 <div id="highlights-wrap">
-                    <p className="details-display" id="highlights-display" style={{display:this.state.detailsDisplay}}>
+                    <div className="details-display" id="highlights-display" style={{display:this.state.detailsDisplay}}>
                         {this.state.highlights}
-                    </p>
+                    </div>
                     <textarea className="details-input" name="highlights" id="highlights-textarea" placeholder="Brag a little!"
                     onChange={this.handleChange} style={{display:this.state.inputDisplay}}></textarea>
 

@@ -3,23 +3,21 @@ import {Link} from "@reach/router";
 import {signInWithGoogle } from "../firebase";
 import {auth} from "../firebase";
 
+
+ 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-
-
-    const signInWithEmailAndPasswordHandler = (event, email,password) => {
+    const signInWithEmailAndPasswordHandler = 
+            (event, email,password) => {
                 event.preventDefault();
+                    window.location = "http://localhost:3000/home";
+                  
+            }
 
-                auth.signInWithEmailAndPassword(email,password).catch(error => {
-                    setError("Error signing in with password and email", error);
-                });
-            };
-
-
-
-    const onChangeHandler = (event) => {
+            //event to handle user input
+        const onChangeHandler = (event) => {
         const {name, value} = event.currentTarget;
 
         if (name === 'userEmail'){
@@ -29,14 +27,15 @@ const SignIn = () => {
         }
     };
 
+
     return (
 
-        <div>
-            <h1>Sign In</h1>
-            <div className="border">
-            {error !== null && <div className = "py-4 bg-red-600 w-full text-white text-center mb-3">{error}</div>}
+        <div className="SignInWrapper">
+            <h1 className="signInTitle">Sign In</h1>
+            <div className="SignInParent">
+            {error !== null && <div>{error}</div>}
                 <form className="signInForm">
-                    <label htmlFor="userEmail" className ="block">
+                    <label htmlFor="userEmail" className ="SignInLabel">
                         Email:
                     </label>
                     <input
@@ -48,7 +47,7 @@ const SignIn = () => {
                         id="userEmail"
                         onChange = {(event) => onChangeHandler(event)}
                     />
-                    <label htmlFor="userPassword" className="block">
+                    <label htmlFor="userPassword" className ="SignInLabel">
                         Password:
                     </label>
                     <input
@@ -84,7 +83,9 @@ const SignIn = () => {
             </div>
         </div>
     );
-};
-    
-    export default SignIn;
+}
+
+
+
+export default SignIn;
 
