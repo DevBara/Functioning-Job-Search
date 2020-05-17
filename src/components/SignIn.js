@@ -16,7 +16,6 @@ const SignIn = () => {
                   
             }
 
-
             //event to handle user input
         const onChangeHandler = (event) => {
         const {name, value} = event.currentTarget;
@@ -31,12 +30,12 @@ const SignIn = () => {
 
     return (
 
-        <div>
-            <h1>Sign In</h1>
-            <div className="border">
+        <div className="SignInWrapper">
+            <h1 className="signInTitle">Sign In</h1>
+            <div className="SignInParent">
             {error !== null && <div>{error}</div>}
                 <form className="signInForm">
-                    <label htmlFor="userEmail" className ="block">
+                    <label htmlFor="userEmail" className ="SignInLabel">
                         Email:
                     </label>
                     <input
@@ -48,7 +47,7 @@ const SignIn = () => {
                         id="userEmail"
                         onChange = {(event) => onChangeHandler(event)}
                     />
-                    <label htmlFor="userPassword" className="block">
+                    <label htmlFor="userPassword" className ="SignInLabel">
                         Password:
                     </label>
                     <input
