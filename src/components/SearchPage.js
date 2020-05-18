@@ -1,5 +1,6 @@
 import React from "react";
 import SearchJobs from "./SearchJobs";
+import "../Styles/SearchPage.sass"
 
 class SearchPage extends React.Component{
 constructor(props){
@@ -23,8 +24,8 @@ getSearchTitle(event){
     this.setState({searchTitle: event.target.value});
 }
 getNumberToDisplay(event){
-event.preventDefault();
-this.setState({numberToDisplay: event.target.value});
+    event.preventDefault();
+    this.setState({numberToDisplay: event.target.value});
 }
 
 getSearchLocation(event){
@@ -59,8 +60,10 @@ render(){
                         <button className="clear-button-search-page" type="button" onClick={()=>{this.setState({searchTitle: "", searchLocation: "", searchDistanceMl: "", numberToDisplay:"", search: false})}}>Clear</button>
                         <p className="clear-text">If you want to start a new search please press clear</p>
                     </form>
+                </div>  
+                <div id="job-results-div-search-page">
                 {this.state.search ? (<SearchJobs results_per_page={this.state.numberToDisplay} what={this.state.searchTitle} where={this.state.searchLocation} distance={Math.round(this.state.searchDistanceMl/0.62137)}/>) : ""}
-                </div>
+                </div>            
             </div>
     )
 }
