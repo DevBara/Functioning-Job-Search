@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-///This file is storing data/functionality 
+///React Connection to Firebase
 
 const firebaseConfig = {
     apiKey: "AIzaSyAH6L446ZycpAXFfL0ZRDHh7Mxabdh4K_Q",
@@ -26,6 +26,9 @@ export const signInWithGoogle = () => {
   auth.signInWithPopup(provider);
 };
 
+//What to do when user signs ups, how data is saved
+//Firebase connections
+//Each user has their own ID(Unique ID-UID)
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return;
 
@@ -36,9 +39,9 @@ export const generateUserDocument = async (user, additionalData) => {
     const { email, displayName, photoURL } = user;
     try {
       await userRef.set({
-        displayName,
+        // displayName,
         email,
-        photoURL,
+        // photoURL,
         ...additionalData
         
       });

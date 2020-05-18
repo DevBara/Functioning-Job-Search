@@ -32,10 +32,10 @@ const SignIn = () => {
 
         <div className="sign-in-wrapper">
             <h1 className="sign-in-title">Sign In</h1>
-            <div className="Sign-in-parent">
+            <div className="sign-in-parent">
             {error !== null && <div>{error}</div>}
                 <form className="sign-in-form">
-                    <label htmlFor="userEmail" className ="SignInLabel">
+                    <label htmlFor="userEmail" className ="sign-in-label">
                         Email:
                     </label>
                     <input
@@ -45,7 +45,8 @@ const SignIn = () => {
                         placeholder="user@gmail.com"
                         id="userEmail"
                         onChange = {(event) => onChangeHandler(event)}
-                        className="email-nput"
+                        className="user-input"
+                        required
                     />
                     <label htmlFor="userPassword" className ="sign-in-label">
                         Password:
@@ -57,7 +58,8 @@ const SignIn = () => {
                         placeholder ="Your Password"
                         id="userPassword"
                         onChange ={(event) => onChangeHandler(event)}
-                        className="password-input"
+                        className="user-input"
+                        required
                     />
 
                     <button className="sign-in-btn" onClick = {(event) => {signInWithEmailAndPasswordHandler(event,email,password)}}>
@@ -66,9 +68,6 @@ const SignIn = () => {
                 </form>
                     <p className="need-account">
                         Don't Have An Account?{""}
-                        <Link to ="signup" className="sign-up-link">
-                            Sign Up Here
-                        </Link> {""}
                         <br />
 
                         {/* <button className="googleSignInBtn" onClick={() => {
@@ -79,6 +78,9 @@ const SignIn = () => {
                         {/* <Link to ="passwordRest">
                             Forgot Password?
                         </Link> */}
+                        <Link to ="signup" className="sign-up-link">
+                            Sign Up Here
+                        </Link> {""}
                     </p>
             </div>
         </div>
