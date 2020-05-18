@@ -4,7 +4,7 @@
 {
     display: flex;
     justify-content: center;
-    background-color: $light_blue;
+    margin-top: 5px;
 }
 #search-form{
     display: flex;
@@ -12,7 +12,7 @@
     padding-left: 150px;
     padding-right: 150px;
     align-items: center;
-    border: solid 5px green;
+    background-color: $light_blue;
 
 }
 .input-class{
@@ -25,4 +25,19 @@
 }
 .input-class{
     width: 170px;
+}
+
+#display-select-div{
+    display: flex;
+    flex-direction: row;
+}
+.form-mini-divs{
+margin-right: 15px;
+}
+.job-display-p{
+    font-family:$noto_sans ;
+}
+#submit-button-form{
+    margin-right: 15px;
+
 }
