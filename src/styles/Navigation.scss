@@ -1,5 +1,7 @@
+@import  "ReusableComponents";
 .nav-bar{
-background-color: blue;
+background-color: #0D72A1;
+color:$light_blue;
 padding-top:10px;
 padding-bottom: 10px;
 }
@@ -9,4 +11,5 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 justify-content: space-around;
+
 }
