@@ -10,14 +10,12 @@ constructor(props){
         searchLocation: "",
         searchDistanceMl: "",
         numberToDisplay:"",
-        page: 1,
         search: false
     }
     this.getSearchTitle=this.getSearchTitle.bind(this);
     this.getSearchLocation=this.getSearchLocation.bind(this);
     this.getNumberToDisplay=this.getNumberToDisplay.bind(this);
     this.getSearchDistanceKm=this.getSearchDistanceKm.bind(this);
-    this.getPage=this.getPage.bind(this);
     this.submitButtonHandler=this.submitButtonHandler.bind(this);
 }
 
@@ -38,10 +36,7 @@ getSearchDistanceKm(event){
     event.preventDefault();
     this.setState({searchDistanceMl: event.target.value});
 }
-getPage(event){
-    event.preventDefault();
-    this.setState({page: event.target.value});
-}
+
 
 submitButtonHandler(event){
     event.preventDefault();
@@ -61,7 +56,6 @@ render(){
                         <input className="input-class" id="job-distance-input"  type="text" value={this.state.searchDistanceMl} onChange={this.getSearchDistanceKm} placeholder="Enter searching distance in miles"/>
                         <p id="job-display-p">Number of results to display:</p>
                         <input className="input-class" id="job-display-input"  type="text" value={this.state.numberToDisplay} onChange={this.getNumberToDisplay} placeholder="Enter number of results to display"/>
-                        <input className="input-class" id="job-display-input"  type="text" value={this.state.page} onChange={this.getPage} placeholder="Enter page"/>
                         <input className="submit-button-dictionaries" type="submit" />
                         {/* clear button will clear the state, put values to initial state in order to do a new search */}
                         <button className="clear-button-search-page" type="button" onClick={()=>{this.setState({searchTitle: "", searchLocation: "", searchDistanceMl: "", numberToDisplay:"", search: false})}}>Clear</button>
@@ -69,7 +63,7 @@ render(){
                     </form>
                 </div>  
                 <div id="job-results-div-search-page">
-                {this.state.search ? (<SearchJobs results_per_page={this.state.numberToDisplay} page={this.state.page} what={this.state.searchTitle} where={this.state.searchLocation} distance={Math.round(this.state.searchDistanceMl/0.62137)}/>) : ""}
+                {this.state.search ? (<SearchJobs results_per_page={this.state.numberToDisplay} what={this.state.searchTitle} where={this.state.searchLocation} distance={Math.round(this.state.searchDistanceMl/0.62137)}/>) : ""}
                 </div>            
             </div>
     )

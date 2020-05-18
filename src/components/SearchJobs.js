@@ -9,14 +9,14 @@ class SearchJobs extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            jobsList:[]
+            jobsList:[],
         }
     }
     async getJobs(){
         const key=process.env.REACT_APP_API_KEY_JOB;
         const appId=process.env.REACT_APP_APP_ID_ID;
         try{
-           let jobsInfo=await axios.get(`https://api.adzuna.com/v1/api/jobs/us/search/${this.props.page}?app_id=${appId}&app_key=${key}&results_per_page=${this.props.results_per_page}&what=${this.props.what}&title_only=${this.props.what}&where=${this.props.where}&distance=${this.props.distance}&content-type=application/json`)
+           let jobsInfo=await axios.get(`https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${appId}&app_key=${key}&results_per_page=${this.props.results_per_page}&what=${this.props.what}&title_only=${this.props.what}&where=${this.props.where}&distance=${this.props.distance}&content-type=application/json`)
            this.setState({jobsList: jobsInfo.data.results});
         }
         catch(error){
@@ -38,7 +38,7 @@ class SearchJobs extends React.Component{
             else{
             let jobs=this.state.jobsList.map((res,index)=> {
                 let create=new Date(res.created)
-                let dateCreated=create.getUTCMonth() + "/" +create.getUTCDay() + "/" +create.getUTCFullYear() + "at" + create.getUTCHours() + ":" + create.getUTCMinutes();
+                let dateCreated=create.getUTCMonth() + "/" +create.getUTCDay() + "/" +create.getUTCFullYear() + " at " + create.getUTCHours() + ":" + create.getUTCMinutes();
                 return <div className="job-search-output-div-class">
                     <p className="job-search-output-class-p">Title: {removemd(res.title)}</p> 
                     <p className="job-search-output-class-p">Category: {res.category.label}</p>
@@ -65,3 +65,6 @@ class SearchJobs extends React.Component{
     }
 }
 export default SearchJobs;
+
+
+
