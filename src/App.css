@@ -3,9 +3,11 @@
   height: 100vh;
   background-color: aquamarine;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
 }
+
 #profile-wrap{
   height: 90%;
   width:70%;

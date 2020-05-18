@@ -5,7 +5,7 @@ import Application from "./components/Application";
 import SearchPage from "./components/SearchPage"
 import Home from './components/Home';
 import ProfilePage from "./components/ProfilePage";
-
+import "./App.css"
 
 
 function App() {
