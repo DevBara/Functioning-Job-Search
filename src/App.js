@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import UserProvider from './providers/UserProvider'
 import Application from "./components/Application";
@@ -18,13 +19,13 @@ function App() {
           <nav className="navbar">
             <ul>
               <li>
-                <Link className="" to ="/home"> Home</Link>
+                <Link className="nav" to ="/home"> Home</Link>
               </li>
               <li>
-                <Link className="" to ="/searchpage"> Search Jobs</Link>
+                <Link className="nav" to ="/searchpage"> Search Jobs</Link>
               </li>
               <li>
-                <Link className="" to ="/profile">Profile</Link>
+                <Link className="nav" to ="/profile">Profile</Link>
               </li>
             </ul>
           </nav>
