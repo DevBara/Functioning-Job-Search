@@ -1,5 +1,15 @@
 @import "ReusableComponents";
 
+//SearchPage.js 
+
+@mixin buttons(){
+    margin-right: 15px;
+    background-color:$grey;
+    border-radius: 10px; 
+    font-family: $noto_sans; 
+    color: $darkest_blue;
+    margin-top: 10px;
+}
 #search-page-form-div
 {
     display: flex;
@@ -12,7 +22,8 @@
     padding-left: 150px;
     padding-right: 150px;
     align-items: center;
-    background-color: $light_blue;
+    background-color: $light_blue_transparent;
+    border:groove 2.5px $light_blue;
 
 }
 .input-class{
@@ -25,7 +36,12 @@
 }
 .input-class{
     width: 170px;
+    cursor:text;
+    font-family: $noto_sans;
+    background-color: rgb(246, 246, 246);
+    
 }
+
 
 #display-select-div{
     display: flex;
@@ -36,8 +52,42 @@ margin-right: 15px;
 }
 .job-display-p{
     font-family:$noto_sans ;
+    color:$darkest_blue;
 }
-#submit-button-form{
-    margin-right: 15px;
+
+
+.select-to-display{
+    cursor: pointer;
+    font-family: $noto_sans;
+    font-size: 12px;
+    width: 100px;
+    text-align: center;
+}
+#clear-button-search-page{
+   @include buttons();
 
 }
+#submit-button-form{
+    @include buttons();
+    margin-right: 15px;
+ }
+
+ #clear-button-search-page:hover{
+    background-color: $beige;
+    cursor: pointer;
+}
+#submit-button-form:hover{
+    background-color: $beige;
+    cursor: pointer;
+}
+
+//SearchJob.js
+
+#main-div-job-search-results{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    border:solid red 3px;
+}
+
+

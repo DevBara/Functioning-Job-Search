@@ -9,7 +9,7 @@ constructor(props){
         searchTitle: "",
         searchLocation: "",
         searchDistanceMl: "",
-        numberToDisplay:1,
+        numberToDisplay:5,
         page:1,
         search: false
     }
@@ -57,19 +57,19 @@ render(){
                         <div id="form-inputs-div">
                         <div className="form-mini-divs">
                         <p className="job-display-p">Title:</p>
-                        <input className="input-class" id="job-title-input"  type="text" value={this.state.searchTitle} onChange={this.getSearchTitle} placeholder="Enter title"/>
+                        <input className="input-class" id="job-title-input"  type="text" value={this.state.searchTitle} onChange={this.getSearchTitle} placeholder="&#128269; Search title..."/>
                         </div>
                         <div className="form-mini-divs">
                         <p className="job-display-p">Location:</p>
-                        <input className="input-class" id="job-location-input"  type="text" value={this.state.searchLocation} onChange={this.getSearchLocation} placeholder="Enter location"/>
+                        <input className="input-class" id="job-location-input"  type="text" value={this.state.searchLocation} onChange={this.getSearchLocation} placeholder="&#128269; Search location..."/>
                        </div>
                         <div className="form-mini-divs">
                         <p className="job-display-p">Search distance:</p>
-                        <input className="input-class" id="job-distance-input"  type="text" value={this.state.searchDistanceMl} onChange={this.getSearchDistanceKm} placeholder="Enter searching distance in miles"/>
+                        <input className="input-class" id="job-distance-input"  type="text" value={this.state.searchDistanceMl} onChange={this.getSearchDistanceKm} placeholder="&#128269; Search distance..."/>
                        </div>
                         <div className="form-mini-divs">
                         <p className="job-display-p">Number of results:</p>
-                        <select id="select-to-display" value={this.state.value} onChange={this.getNumberToDisplay}>
+                        <select className="select-to-display" value={this.state.value} onChange={this.getNumberToDisplay}>
                           <option className="options-to-display-class" value="5">5</option>
                           <option className="options-to-display-class" value="10">10</option>
                           <option className="options-to-display-class" value="15">15</option>
@@ -94,7 +94,7 @@ render(){
                         </div>
                         <div className="form-mini-divs">
                         <p className="job-display-p">Page to get information from:</p>
-                        <select id="select-to-display" value={this.state.value} onChange={this.getNumberPage}>
+                        <select className="select-to-display" value={this.state.value} onChange={this.getNumberPage}>
                           <option className="options-to-display-class" value="1">1</option>
                           <option className="options-to-display-class" value="2">2</option>
                           <option className="options-to-display-class" value="3">3</option>
@@ -113,12 +113,10 @@ render(){
                         {/* clear button will clear the state, put values to initial state in order to do a new search */}
                         <button id="clear-button-search-page" type="button" onClick={()=>{this.setState({searchTitle: "", searchLocation: "", searchDistanceMl: "", search: false})}}>Clear</button>
                         </div>
-                        <p id="clear-text">If you want to start a new search please press clear</p>
+                        <p className="job-display-p">If you want to start a new search please press clear</p>
                     </form>
                 </div>  
-                <div id="job-results-div-search-page">
-                {this.state.search ? (<SearchJobs results_per_page={this.state.numberToDisplay} page={this.state.page} what={this.state.searchTitle} where={this.state.searchLocation} distance={Math.round(this.state.searchDistanceMl/0.62137)}/>) : ""}
-                </div>            
+                {this.state.search ? (<SearchJobs results_per_page={this.state.numberToDisplay} page={this.state.page} what={this.state.searchTitle} where={this.state.searchLocation} distance={Math.round(this.state.searchDistanceMl/0.62137)}/>) : ""}           
             </div>
     )
 }

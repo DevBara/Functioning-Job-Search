@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import removemd from "remove-markdown";
-import MapSearch from "./MapSearch"
+import MapSearch from "./MapSearch";
+import "../styles/SearchPage.scss"
 
 
 
@@ -39,7 +40,7 @@ class SearchJobs extends React.Component{
             let jobs=this.state.jobsList.map((res,index)=> {
                 let create=new Date(res.created)
                 let dateCreated=create.getUTCMonth() + "/" +create.getUTCDay() + "/" +create.getUTCFullYear() + " at " + create.getUTCHours() + ":" + create.getUTCMinutes();
-                return <div className="job-search-output-div-class">
+                return <div className="job-search-output-div-class">{index}
                     <p className="job-search-output-class-p">Title: {removemd(res.title)}</p> 
                     <p className="job-search-output-class-p">Category: {res.category.label}</p>
                     <p className="job-search-output-class-p">Company Name: {res.company.display_name}</p>
@@ -47,7 +48,7 @@ class SearchJobs extends React.Component{
                     <p className="job-search-output-class-p">Description: {removemd(res.description)}</p>
                     <a className="job-search-output-class-a" href={res.redirect_url}>Aditional information </a>
                     <p className="job-search-output-class-p">Created on: {dateCreated}</p>
-                    <div className="map-info-div"> <MapSearch lat={res.latitude} lng={res.longitude}/></div>
+                    <MapSearch lat={res.latitude} lng={res.longitude}/>
                 </div> 
             })
             return jobs;
