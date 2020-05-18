@@ -40,24 +40,24 @@ const SignIn = () => {
                     </label>
                     <input
                         type ="email"
-                        className="emailInput"
                         name="userEmail"
                         value= {email}
                         placeholder="user@gmail.com"
                         id="userEmail"
                         onChange = {(event) => onChangeHandler(event)}
+                        className="emailInput"
                     />
                     <label htmlFor="userPassword" className ="SignInLabel">
                         Password:
                     </label>
                     <input
                         type ="password"
-                        className="passwordInput"
                         name="userPassword"
                         value={password}
                         placeholder ="Your Password"
                         id="userPassword"
                         onChange ={(event) => onChangeHandler(event)}
+                        className="passwordInput"
                     />
 
                     <button className="signInBtn" onClick = {(event) => {signInWithEmailAndPasswordHandler(event,email,password)}}>
