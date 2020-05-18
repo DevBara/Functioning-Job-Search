@@ -36,17 +36,17 @@ const SignUp = () => {
   };
 
     return (
-        <div className="SignUpWrapper">
-            <h1 className="SignUpTitle">Sign Up</h1>
-            <div className ="SignUpParent">
+        <div className="sign-up-wrapper">
+            <h1 className="sign-up-title">Sign Up</h1>
+            <div className ="sign-up-parent">
                {error !== null && (
                   <div className= "error">
                     {error}
             </div>
         )}
 
-            <form className="SignUpDisplayForm">
-                <label htmlFor ="userEmail" className="SignUpLabel">
+            <form className="sign-up-display-form">
+                <label htmlFor ="userEmail" className="sign-up-label">
                    Email:
                 </label>
                 <input
@@ -56,9 +56,9 @@ const SignUp = () => {
                    placeholder = "user@gmail.com"
                    id="userEmail"
                    onChange={event => onChangeHandler(event)}
-                   className="emailInput"
+                   className="email-input"
                 />
-                <label htmlFor="userPassword" className="SignUpLabel">
+                <label htmlFor="userPassword" className="sign-up-label">
                     Password:
                 </label>
                 <input
@@ -68,9 +68,9 @@ const SignUp = () => {
                     placeholder="Your Password"
                     id="userPassword"
                     onChange={event => onChangeHandler(event)}
-                    className="passwordInput"
+                    className="password-input"
                 />
-                <button className="newUserSignUp" onClick={event => {
+                <button className="new-user-sign-up" onClick={event => {
                     createUserWithEmailAndPasswordHandler(event,email,password);
                 }}>
                     Sign Up
@@ -85,7 +85,7 @@ const SignUp = () => {
             }}>
                 Sign in With Google
             </button> */}
-            <p className="haveAccount">
+            <p className="have-account">
                 Already have an account? {""}
                 <Link to ="/">
                 Sign in here

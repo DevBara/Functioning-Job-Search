@@ -30,11 +30,11 @@ const SignIn = () => {
 
     return (
 
-        <div className="SignInWrapper">
-            <h1 className="signInTitle">Sign In</h1>
-            <div className="SignInParent">
+        <div className="sign-in-wrapper">
+            <h1 className="sign-in-title">Sign In</h1>
+            <div className="Sign-in-parent">
             {error !== null && <div>{error}</div>}
-                <form className="signInForm">
+                <form className="sign-in-form">
                     <label htmlFor="userEmail" className ="SignInLabel">
                         Email:
                     </label>
@@ -45,9 +45,9 @@ const SignIn = () => {
                         placeholder="user@gmail.com"
                         id="userEmail"
                         onChange = {(event) => onChangeHandler(event)}
-                        className="emailInput"
+                        className="email-nput"
                     />
-                    <label htmlFor="userPassword" className ="SignInLabel">
+                    <label htmlFor="userPassword" className ="sign-in-label">
                         Password:
                     </label>
                     <input
@@ -57,16 +57,16 @@ const SignIn = () => {
                         placeholder ="Your Password"
                         id="userPassword"
                         onChange ={(event) => onChangeHandler(event)}
-                        className="passwordInput"
+                        className="password-input"
                     />
 
-                    <button className="signInBtn" onClick = {(event) => {signInWithEmailAndPasswordHandler(event,email,password)}}>
+                    <button className="sign-in-btn" onClick = {(event) => {signInWithEmailAndPasswordHandler(event,email,password)}}>
                         Sign In
                     </button>
                 </form>
-                    <p className="needAccount">
+                    <p className="need-account">
                         Don't Have An Account?{""}
-                        <Link to ="signup" className="signupLink">
+                        <Link to ="signup" className="sign-up-link">
                             Sign Up Here
                         </Link> {""}
                         <br />
