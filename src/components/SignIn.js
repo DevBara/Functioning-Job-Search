@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Link} from "@reach/router";
 import {signInWithGoogle } from "../firebase";
 import {auth} from "../firebase";
+import "../styles/SigninLogIn.scss"
 
 
  

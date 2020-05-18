@@ -5,7 +5,7 @@ import Application from "./components/Application";
 import SearchPage from "./components/SearchPage"
 import Home from './components/Home';
 import ProfilePage from "./components/ProfilePage";
-
+import "./styles/Navigation.scss"
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <UserProvider>
       <Router>
         <div className="App">
-          <nav className="navbar">
+          <nav className="nav-bar">
             <ul>
               <li>
                 <Link className="" to ="/home"> Home</Link>
