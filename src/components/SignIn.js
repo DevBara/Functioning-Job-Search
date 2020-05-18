@@ -32,6 +32,7 @@ const SignIn = () => {
     return (
 
         <div className="sign-in-wrapper">
+            <div id="sigin-div">
             <h1 className="sign-in-title">Sign In</h1>
             <div className="Sign-in-parent">
             {error !== null && <div>{error}</div>}
@@ -81,6 +82,7 @@ const SignIn = () => {
                             Forgot Password?
                         </Link> */}
                     </p>
+                </div>
             </div>
         </div>
     );

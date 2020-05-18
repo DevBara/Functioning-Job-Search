@@ -4,6 +4,14 @@
 $noto_sans: 'Noto Sans', sans-serif;
 
 //Colors
-
+$light_blue:  #B7D3E3;
+$blue:#0D72A1;
+$darkest_blue: #003b66;
+$grey:#CDD0D5;
+$beige:#FFFEFA;
 //Mixins
-
+@mixin display_signIn(){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
