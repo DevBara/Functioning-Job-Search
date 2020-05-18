@@ -31,7 +31,7 @@ class MapSearch extends React.Component{
               return <div> 
               <img src={this.state.mapInfo.mapUrl} />
             <ul>Address: 
-            <li>Street:{this.state.mapInfo.street} </li> 
+            <li>Street: {this.state.mapInfo.street} </li> 
              <li>{this.state.mapInfo.adminArea5Type}: {this.state.mapInfo.adminArea5}</li>
              <li>{this.state.mapInfo.adminArea3Type}: {this.state.mapInfo.adminArea3}</li>
              <li>Postal code: {this.state.mapInfo.postalCode}</li>
@@ -41,7 +41,6 @@ class MapSearch extends React.Component{
  
         }
     }
-
     render(){
         return(
             <div>
