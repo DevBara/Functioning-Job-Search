@@ -1,9 +1,43 @@
-#search-form
+@import "ReusableComponents";
+
+#search-page-form-div
 {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    margin-top: 5px;
+}
+#search-form{
+    display: flex;
+    flex-direction: column;
+    padding-left: 150px;
+    padding-right: 150px;
+    align-items: center;
+    background-color: $light_blue;
+
 }
 .input-class{
     width: 75px;
     height: 15px;
+}
+#form-inputs-div{
+    display: flex;
+   flex-direction: row;
+}
+.input-class{
+    width: 170px;
+}
+
+#display-select-div{
+    display: flex;
+    flex-direction: row;
+}
+.form-mini-divs{
+margin-right: 15px;
+}
+.job-display-p{
+    font-family:$noto_sans ;
+}
+#submit-button-form{
+    margin-right: 15px;
+
 }

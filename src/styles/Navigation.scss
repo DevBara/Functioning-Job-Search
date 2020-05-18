@@ -1,12 +1,28 @@
+@import  "ReusableComponents";
 .nav-bar{
-background-color: blue;
+background-color: $blue;
 padding-top:10px;
 padding-bottom: 10px;
+border-bottom:inset 5px $darkest_blue;
+
 }
 #nav-ul{
 list-style: none;
 display: flex;
 flex-direction: row;
 justify-content: center;
-justify-content: space-around;
+justify-content: space-evenly;
+}
+
+.link{
+    color:$beige;
+    text-decoration: none;
+    font-family: $noto_sans;
+    font-size: 20px;
+}
+
+.link:hover{
+    color:$light_blue;
+    text-decoration: underline;
+
 }

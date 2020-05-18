@@ -19,6 +19,7 @@ function App() {
           <nav className="nav-bar">
             <ul id="nav-ul">
               <li>
+<<<<<<< HEAD
                 <Link className="nav" to ="/home"> Home</Link>
               </li>
               <li>
@@ -26,6 +27,15 @@ function App() {
               </li>
               <li>
                 <Link className="nav" to ="/profile">Profile</Link>
+=======
+                <Link className="link" to ="/home"> Home</Link>
+              </li>
+              <li>
+                <Link className="link" to ="/searchpage"> Search Jobs</Link>
+              </li>
+              <li>
+                <Link className="link" to ="/profile">Profile</Link>
+>>>>>>> 652d087fed49bfc9028761ebc8a16e1454aa3b31
               </li>
             </ul>
           </nav>
