@@ -7,6 +7,7 @@ import Home from './components/Home';
 import ProfilePage from "./components/ProfilePage";
 import "./styles/Navigation.scss"
 
+import "./App.css"
 
 function App() {
 
