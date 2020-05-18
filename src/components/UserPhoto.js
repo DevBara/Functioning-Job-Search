@@ -21,6 +21,7 @@ export default class UserPhoto extends Component {
             url: e.target.value,
         })
     }
+
     handleUpload(e){
 
         this.setState({ 
@@ -28,6 +29,7 @@ export default class UserPhoto extends Component {
            photo: "url(" + this.state.url + ")"
         })
     }
+    
     render() {
         return (
             <div id="photo-square-wrap">
@@ -36,7 +38,6 @@ export default class UserPhoto extends Component {
                     <button id="upload-button" onClick={this.handleUpload}>Upload</button>
                 </div>
                 <div id="photo-square" style={{backgroundImage: this.state.photo}}>
-                    {/* <img src={this.state.url} alt="profile icon" /> */}
                 </div> 
             </div>
         )
