@@ -37,8 +37,8 @@ class MapSearch extends React.Component{
         }
         else{
               let info=(<div> 
-              <img src={this.state.mapInfo.mapUrl} />
-             <ul>Address: 
+              <img className="map-image" src={this.state.mapInfo.mapUrl} />
+             <ul className="map-info-ul">Address: 
             <li>Street: {this.state.mapInfo.street} </li> 
              <li>{this.state.mapInfo.adminArea5Type}: {this.state.mapInfo.adminArea5}</li>
              <li>{this.state.mapInfo.adminArea3Type}: {this.state.mapInfo.adminArea3}</li>

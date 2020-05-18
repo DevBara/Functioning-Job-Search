@@ -40,13 +40,13 @@ class SearchJobs extends React.Component{
             let jobs=this.state.jobsList.map((res,index)=> {
                 let create=new Date(res.created)
                 let dateCreated=create.getUTCMonth() + "/" +create.getUTCDay() + "/" +create.getUTCFullYear() + " at " + create.getUTCHours() + ":" + create.getUTCMinutes();
-                return <div className="job-search-output-div-class">{index}
-                    <p className="job-search-output-class-p">Title: {removemd(res.title)}</p> 
+                return <div className="job-search-output-div-class">
+                    <h2 className="job-search-output-class-h2">Title: {removemd(res.title)}</h2> 
                     <p className="job-search-output-class-p">Category: {res.category.label}</p>
                     <p className="job-search-output-class-p">Company Name: {res.company.display_name}</p>
                     <p className="job-search-output-class-p">Contract time: {res.contract_time}</p>
                     <p className="job-search-output-class-p">Description: {removemd(res.description)}</p>
-                    <a className="job-search-output-class-a" href={res.redirect_url}>Aditional information </a>
+                    <a className="job-search-output-class-a" href={res.redirect_url}>&#x1F517;Aditional information </a>
                     <p className="job-search-output-class-p">Created on: {dateCreated}</p>
                     <MapSearch lat={res.latitude} lng={res.longitude}/>
                 </div> 

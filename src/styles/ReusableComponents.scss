@@ -17,4 +17,16 @@ $beige:#FFFEFA;
     align-items: center;
 }
 
+@mixin buttons(){
+    margin-right: 15px;
+    background-color:$grey;
+    border-radius: 10px; 
+    font-family: $noto_sans; 
+    color: $darkest_blue;
+    margin-top: 10px;
+}
+@mixin font_text_search(){
+    color:$darkest_blue;
+    font-family: $noto_sans;
+}
 
