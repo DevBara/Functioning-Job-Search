@@ -10,7 +10,6 @@ export default class EmploymentHistory extends Component {
             company:'',
             dates:'',
             duties:'',
-            adding: false,
             addButton: 'block',
             saveButton: 'none',
             cardsAdded: []

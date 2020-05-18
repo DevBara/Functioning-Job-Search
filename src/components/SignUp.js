@@ -13,7 +13,9 @@ const SignUp = () => {
       const {user} = await auth.createUserWithEmailAndPassword(email, password);
       generateUserDocument(user);
       alert ('You have successfully signed up');
+      window.location = "http://localhost:3000";
     }
+    
     catch(error){
       setError('Error Signing up with email and password');
     }
@@ -68,13 +70,13 @@ const SignUp = () => {
                     onChange={event => onChangeHandler(event)}
                     className="passwordInput"
                 />
-                <button className="newUser" onClick={event => {
+                <button className="newUserSignUp" onClick={event => {
                     createUserWithEmailAndPasswordHandler(event,email,password);
                 }}>
                     Sign Up
                 </button>
             </form>
-            <button className="googleSignInBtn" onClick={() => {
+            {/* <button className="googleSignInBtn" onClick={() => {
                 try{
                     signInWithGoogle();
                 } catch (error){
@@ -82,8 +84,8 @@ const SignUp = () => {
                 }
             }}>
                 Sign in With Google
-            </button>
-            <p>
+            </button> */}
+            <p className="haveAccount">
                 Already have an account? {""}
                 <Link to ="/">
                 Sign in here
