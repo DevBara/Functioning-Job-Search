@@ -18,7 +18,7 @@ function App() {
           <nav className="navbar">
             <ul>
               <li>
-                <Link className="" to ="/Home"> Home</Link>
+                <Link className="" to ="/home"> Home</Link>
               </li>
               <li>
                 <Link className="" to ="/searchpage"> Search Jobs</Link>
@@ -35,9 +35,8 @@ function App() {
           </Switch>
         </div>
      </Router>
-     <Application />
+        <Application />
     </UserProvider>
-
   );
 }
 

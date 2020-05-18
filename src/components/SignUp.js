@@ -13,7 +13,9 @@ const SignUp = () => {
       const {user} = await auth.createUserWithEmailAndPassword(email, password);
       generateUserDocument(user);
       alert ('You have successfully signed up');
+      window.location = "http://localhost:3000";
     }
+    
     catch(error){
       setError('Error Signing up with email and password');
     }
@@ -34,17 +36,17 @@ const SignUp = () => {
   };
 
     return (
-        <div className="SignUpWrapper">
-            <h1 className="SignUpTitle">Sign Up</h1>
-            <div className ="SignUpParent">
+        <div className="sign-up-wrapper">
+            <h1 className="sign-up-title">Sign Up</h1>
+            <div className ="sign-up-parent">
                {error !== null && (
                   <div className= "error">
                     {error}
             </div>
         )}
 
-            <form className="SignUpDisplayForm">
-                <label htmlFor ="userEmail" className="SignUpLabel">
+            <form className="sign-up-display-form">
+                <label htmlFor ="userEmail" className="sign-up-label">
                    Email:
                 </label>
                 <input
@@ -54,9 +56,9 @@ const SignUp = () => {
                    placeholder = "user@gmail.com"
                    id="userEmail"
                    onChange={event => onChangeHandler(event)}
-                   className="emailInput"
+                   className="email-input"
                 />
-                <label htmlFor="userPassword" className="SignUpLabel">
+                <label htmlFor="userPassword" className="sign-up-label">
                     Password:
                 </label>
                 <input
@@ -66,15 +68,15 @@ const SignUp = () => {
                     placeholder="Your Password"
                     id="userPassword"
                     onChange={event => onChangeHandler(event)}
-                    className="passwordInput"
+                    className="password-input"
                 />
-                <button className="newUser" onClick={event => {
+                <button className="new-user-sign-up" onClick={event => {
                     createUserWithEmailAndPasswordHandler(event,email,password);
                 }}>
                     Sign Up
                 </button>
             </form>
-            <button className="googleSignInBtn" onClick={() => {
+            {/* <button className="googleSignInBtn" onClick={() => {
                 try{
                     signInWithGoogle();
                 } catch (error){
@@ -82,8 +84,8 @@ const SignUp = () => {
                 }
             }}>
                 Sign in With Google
-            </button>
-            <p>
+            </button> */}
+            <p className="have-account">
                 Already have an account? {""}
                 <Link to ="/">
                 Sign in here
