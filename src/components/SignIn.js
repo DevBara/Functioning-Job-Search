@@ -64,14 +64,14 @@ const SignIn = () => {
                         Sign In
                     </button>
                 </form>
-                    <p className="">
+                    <p className="needAccount">
                         Don't Have An Account?{""}
-                        <Link to ="signup">
+                        <Link to ="signup" className="signupLink">
                             Sign Up Here
                         </Link> {""}
                         <br />
 
-                        <button className="googleButton" onClick={() => {
+                        <button className="googleSignInBtn" onClick={() => {
                             signInWithGoogle();
                         }}>
                             Sign in with Google
