@@ -60,7 +60,7 @@ const SignIn = () => {
                         onChange ={(event) => onChangeHandler(event)}
                     />
 
-                    <button className="googleButton" onClick = {(event) => {signInWithEmailAndPasswordHandler(event,email,password)}}>
+                    <button className="signInBtn" onClick = {(event) => {signInWithEmailAndPasswordHandler(event,email,password)}}>
                         Sign In
                     </button>
                 </form>
@@ -71,11 +71,11 @@ const SignIn = () => {
                         </Link> {""}
                         <br />
 
-                        <button className="googleSignInBtn" onClick={() => {
+                        {/* <button className="googleSignInBtn" onClick={() => {
                             signInWithGoogle();
                         }}>
                             Sign in with Google
-                        </button>
+                        </button> */}
                         {/* <Link to ="passwordRest">
                             Forgot Password?
                         </Link> */}

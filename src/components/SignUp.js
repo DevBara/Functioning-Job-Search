@@ -76,7 +76,7 @@ const SignUp = () => {
                     Sign Up
                 </button>
             </form>
-            <button className="googleSignInBtn" onClick={() => {
+            {/* <button className="googleSignInBtn" onClick={() => {
                 try{
                     signInWithGoogle();
                 } catch (error){
@@ -84,7 +84,7 @@ const SignUp = () => {
                 }
             }}>
                 Sign in With Google
-            </button>
+            </button> */}
             <p className="haveAccount">
                 Already have an account? {""}
                 <Link to ="/">
