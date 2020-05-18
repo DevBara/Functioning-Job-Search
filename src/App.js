@@ -18,13 +18,13 @@ function App() {
           <nav className="nav-bar">
             <ul id="nav-ul">
               <li>
-                <Link className="" to ="/home"> Home</Link>
+                <Link className="link" to ="/home"> Home</Link>
               </li>
               <li>
-                <Link className="" to ="/searchpage"> Search Jobs</Link>
+                <Link className="link" to ="/searchpage"> Search Jobs</Link>
               </li>
               <li>
-                <Link className="" to ="/profile">Profile</Link>
+                <Link className="link" to ="/profile">Profile</Link>
               </li>
             </ul>
           </nav>
