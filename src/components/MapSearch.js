@@ -13,7 +13,6 @@ class MapSearch extends React.Component{
        try{
            let mapData=await axios.get(`http://open.mapquestapi.com/geocoding/v1/reverse?key=${keyMap}&location=${this.props.lat},${this.props.lng}&includeRoadMetadata=true&includeNearestIntersection=true`)
             this.setState({mapInfo:mapData.data.results[0].locations[0]})
-            console.log(this.state.mapInfo)
        }
        catch(error){
            console.log(error);

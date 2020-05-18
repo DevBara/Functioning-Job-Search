@@ -1,11 +1,16 @@
 import React from "react";
 import axios from "axios";
 import removemd from "remove-markdown";
+<<<<<<< HEAD
 
 import MapSearch from "./MapSearch"
 
 import MapSearch from "./MapSearch"
 
+=======
+import MapSearch from "./MapSearch"
+
+>>>>>>> 55214e4125ec01e8d8311cba5cd6fca692157fbe
 
 
 class SearchJobs extends React.Component{
@@ -18,6 +23,7 @@ class SearchJobs extends React.Component{
     async getJobs(){
         const key=process.env.REACT_APP_API_KEY_JOB;
         const appId=process.env.REACT_APP_APP_ID_ID;
+<<<<<<< HEAD
        try{
 
            console.log(this.props.what)
@@ -31,8 +37,10 @@ class SearchJobs extends React.Component{
 
        }
        catch(error){
+=======
+>>>>>>> 55214e4125ec01e8d8311cba5cd6fca692157fbe
         try{
-           let jobsInfo=await axios.get(`https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${appId}&app_key=${key}&results_per_page=${this.props.results_per_page}&what=${this.props.what}&title_only=${this.props.what}&where=${this.props.where}&distance=${this.props.distance}&content-type=application/json`)
+           let jobsInfo=await axios.get(`https://api.adzuna.com/v1/api/jobs/us/search/${this.props.page}?app_id=${appId}&app_key=${key}&results_per_page=${this.props.results_per_page}&what=${this.props.what}&title_only=${this.props.what}&where=${this.props.where}&distance=${this.props.distance}&content-type=application/json`)
            this.setState({jobsList: jobsInfo.data.results});
         }
         catch(error){
@@ -49,6 +57,7 @@ class SearchJobs extends React.Component{
     checkIfExist(){
 
 
+<<<<<<< HEAD
         const disallowed=['Paragraph'];
             if(this.state.jobsList===undefined){
             }
@@ -78,6 +87,11 @@ class SearchJobs extends React.Component{
                     <div>**********************</div>
 
 
+=======
+            if(this.state.jobsList===undefined){
+            }
+            else{
+>>>>>>> 55214e4125ec01e8d8311cba5cd6fca692157fbe
             let jobs=this.state.jobsList.map((res,index)=> {
                 let create=new Date(res.created)
                 let dateCreated=create.getUTCMonth() + "/" +create.getUTCDay() + "/" +create.getUTCFullYear() + "at" + create.getUTCHours() + ":" + create.getUTCMinutes();
@@ -90,7 +104,10 @@ class SearchJobs extends React.Component{
                     <a className="job-search-output-class-a" href={res.redirect_url}>Aditional information </a>
                     <p className="job-search-output-class-p">Created on: {dateCreated}</p>
                     <div className="map-info-div"> <MapSearch lat={res.latitude} lng={res.longitude}/></div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 55214e4125ec01e8d8311cba5cd6fca692157fbe
                 </div> 
             })
             return jobs;
