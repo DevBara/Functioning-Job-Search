@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Link} from "@reach/router";
 import {signInWithGoogle } from "../firebase";
 import {auth} from "../firebase";
+import "../styles/SigninLogIn.scss"
 
 
  
@@ -31,6 +32,7 @@ const SignIn = () => {
     return (
 
         <div className="sign-in-wrapper">
+            <div id="sigin-div">
             <h1 className="sign-in-title">Sign In</h1>
             <div className="sign-in-parent">
             {error !== null && <div>{error}</div>}
@@ -82,6 +84,7 @@ const SignIn = () => {
                             Sign Up Here
                         </Link> {""}
                     </p>
+                </div>
             </div>
         </div>
     );

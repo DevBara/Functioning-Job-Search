@@ -14,13 +14,18 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-html-parser": "^2.0.2",
+    "react-js-pagination": "^3.0.3",
     "react-markdown": "^4.3.1",
+    "react-paginate": "^6.3.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-with-firebase-auth": "^1.3.2",
     "remark-strip-html": "^1.0.1",
-    "remove-markdown": "^0.3.0"
+    "remove-markdown": "^0.3.0",
+    "sass": "^1.26.5"
+
   },
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

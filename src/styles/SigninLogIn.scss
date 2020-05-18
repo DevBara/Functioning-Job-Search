@@ -1,0 +1,12 @@
+@import  "ReusableComponents";
+
+.sign-in-wrapper{
+    @include display_signIn();
+    margin-top: 50px;
+    height: auto;
+}
+#sigin-div{
+    @include display_signIn();
+    padding:25px 55px 35px 55px;
+    background-color: $background_light_blue;
+}
