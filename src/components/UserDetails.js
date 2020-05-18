@@ -41,10 +41,11 @@ export default class UserDetails extends Component {
 
     }
 
+    // style={{display:'flex', width:'60%', flexDirection:'column', alignItems:'center'}}
 
     render() {
         return (
-            <div id="details-wrapper" style={{display:'flex', width:'60%', flexDirection:'column', alignItems:'center'}}>
+            <div id="details-wrapper">
                 <div id="name-wrap">
                 
                     <div className="details-display" id="name-display" style={{display:this.state.detailsDisplay}}>

@@ -29,16 +29,24 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 90%;
+  width: 26%;
+  max-width: 325px;
 }
 
 #photo-square{
-  height: 325px;
-  width: 325px;
+  width: 100%;
   background-color: rgb(122, 122, 212);
   background-position: center top;
   background-size: cover;
   background-repeat:no-repeat;
   position: relative;
+}
+
+#photo-square:after{
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 #upload-overlay-wrap{
@@ -47,12 +55,41 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 #details-wrapper{
   background-color: blueviolet;
   height: 90%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#name-wrap, #location-and-email-wrap{
+  height: 10%;
+  width: 90%;
+}
+
+#highlights-wrap{
+  height: 60%;
+  width: 90%;
+}
+
+#location-and-email-wrap{
+  display: flex;
+  flex-direction: row;
+}
+
+.details-display{
+  margin:5%
+}
+
+#save-button, #edit-button, #upload-button, #add-button, #save-button{
+  width: 50px;
+  background-color: aqua;
+  border: none;
 }
 
 #lower-profile-section{
@@ -60,4 +97,37 @@
   width: 100%;
   background-color: bisque;
 }
+
+.employment-card-wrap{
+  height: 20%;
+  width: 1fr;
+  min-width: 50%;
+  background-color: aqua;
+  margin-bottom: 1%;
+  display: inline-block;
+}
+
+.title-wrap{
+  background-color: pink;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+
+.company-dates-wrap{
+  background-color: pink;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  display: flex;
+}
+
+.company{
+  margin-right: 10%;
+}
+
+.duties-wrap{
+  background-color: pink;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+
   
