@@ -37,6 +37,7 @@ const SignUp = () => {
 
     return (
         <div className="sign-up-wrapper">
+        <div id="sigup-div">
             <h1 className="sign-up-title">Sign Up</h1>
             <div className ="sign-up-parent">
                {error !== null && (
@@ -54,7 +55,6 @@ const SignUp = () => {
                    name="userEmail"
                    value={email}
                    placeholder = "user@gmail.com"
-                   id="userEmail"
                    onChange={event => onChangeHandler(event)}
                    className="email-input"
                 />
@@ -87,10 +87,11 @@ const SignUp = () => {
             </button> */}
             <p className="have-account">
                 Already have an account? {""}
-                <Link to ="/">
+                <Link className="sign-in-link" to ="/">
                 Sign in here
                 </Link>
             </p>
+          </div>
           </div>
         </div>
         

@@ -45,9 +45,8 @@ const SignIn = () => {
                         name="userEmail"
                         value= {email}
                         placeholder="user@gmail.com"
-                        id="userEmail"
                         onChange = {(event) => onChangeHandler(event)}
-                        className="email-nput"
+                        className="email-input"
                     />
                     <label htmlFor="userPassword" className ="sign-in-label">
                         Password:
