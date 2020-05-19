@@ -47,7 +47,7 @@ const SignIn = () => {
                         placeholder="user@gmail.com"
                         id="userEmail"
                         onChange = {(event) => onChangeHandler(event)}
-                        className="user-input"
+                        className="email-input"
                         required
                     />
                     <label htmlFor="userPassword" className ="sign-in-label">
@@ -69,9 +69,7 @@ const SignIn = () => {
                     </button>
                 </form>
                     <p className="need-account">
-                        Don't Have An Account?{""}
-                        <br />
-
+                        Don't Have An Account? {""}
                         {/* <button className="googleSignInBtn" onClick={() => {
                             signInWithGoogle();
                         }}>

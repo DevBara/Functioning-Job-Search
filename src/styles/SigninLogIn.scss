@@ -39,6 +39,10 @@
     margin-right: 15px;
 }
 
+.need-account{
+    @include sign-text();
+}
+
 .sign-up-link{
     @include sign-text();
 }
@@ -80,10 +84,6 @@
 
 .sign-up-display-form{
     @include sign-text();
-}
-
-.userEmail{
-    margin-right: 10px;
 }
 
 .sign-in-link{
