@@ -73,10 +73,6 @@
     width: 90%;
   }
 
-  #highlights-wrap{
-     
-  }
-
   #name-display{
     font-size: 2em;
     color: $darkest_blue;
@@ -174,4 +170,15 @@
     padding-left: 5px;
     margin-left: 2%;
     margin-right:2%;
+  }
+
+  #delete-button{
+      background-color:$grey;
+      outline: 1px solid red;
+      position: relative;
+  }
+
+  #create-button{
+      background-color: whitesmoke;
+      outline: 1px solid $darkest_blue;
   }
