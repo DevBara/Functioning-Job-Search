@@ -1,0 +1,155 @@
+@import "ReusableComponents";
+
+#profile-wrap{
+    height: 95%;
+    width:70%;
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  #upper-profile-section{
+    height: 40%;
+    width: 100%;
+    background-color: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: $noto_sans;
+  }
+  
+  #photo-square-wrap{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 90%;
+    width: 26%;
+    max-width: 325px;
+    outline: 2px solid $darkest_blue;
+  }
+  
+  #photo-square{
+    width: 100%;
+    background-color: rgb(122, 122, 212);
+    background-position: center top;
+    background-size: cover;
+    background-repeat:no-repeat;
+    position: relative;
+  }
+  
+  #photo-square:after{
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  
+  #upload-overlay-wrap{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  #details-wrapper{
+    background-color: whitesmoke;
+    outline: 2px solid $darkest_blue;
+    height: 90%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  #name-wrap, #location-and-email-wrap{
+    height: 15%;
+    width: 90%;
+  }
+  
+  #highlights-wrap{
+    height: 60%;
+    width: 90%;
+  }
+  
+  #location-and-email-wrap{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .details-display{
+    margin:5%
+  }
+  
+  #save-button, #edit-button, #upload-button, #add-button, #save-button{
+    width: 50px;
+    background-color: $grey;
+    font-family: $noto_sans;
+  }
+  
+  #lower-profile-section{
+    height: 60%;
+    width: 100%;
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+  }
+
+  .add-employment-wrap{
+      background-color: $blue;
+      outline: 2px solid $darkest_blue;
+      height: 20%;
+      width: 100%;
+  }
+
+  #employment-section-wrap{
+      background-color: whitesmoke;
+      outline: 2px solid $darkest_blue;
+      width: 90%;
+      height: 100%;
+  }
+
+  .employment-card-wrap{
+    height: 20%;
+    width: 1fr;
+    min-width: 50%;
+    margin-bottom: 1%;
+    display: inline-block;
+  }
+  
+  .title-wrap{
+    height: auto;
+    width: 95%;
+    background-color: $light_blue;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin-left: 2%;
+    margin-right:2%;
+  }
+  
+  .company-dates-wrap{
+    height: auto;
+    width: 95%;
+    background-color: $light_blue;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    display: flex;
+    margin-left: 2%;
+    margin-right:2%;
+  }
+  
+  .company{
+    height: auto;
+    margin-right: 10%;
+  }
+  
+  .duties-wrap{
+    height: auto;
+    width: 95%;
+    background-color: $light_blue;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin-left: 2%;
+    margin-right:2%;
+  }
