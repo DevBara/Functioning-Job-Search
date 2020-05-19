@@ -26,6 +26,7 @@ You will need the following things properly installed on your computer.
 ### API's used:
 
 -https://developer.adzuna.com/
+
 -https://developer.mapquest.com/
 
 *API keys availiable upon request for testing purposes
@@ -33,6 +34,8 @@ You will need the following things properly installed on your computer.
 ### Resources used:
 
 -https://www.compart.com/en/unicode/U+1F517
+
 -https://css-tricks.com/almanac/properties/c/cursor/
+
 -https://www.npmjs.com/package/@tommoor/remove-markdown
 
