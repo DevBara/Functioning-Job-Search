@@ -66,5 +66,3 @@ class SearchJobs extends React.Component{
 export default SearchJobs;
 
 
-export default SearchJobs;
-

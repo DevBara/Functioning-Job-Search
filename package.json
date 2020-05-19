@@ -23,7 +23,6 @@
     "remark-strip-html": "^1.0.1",
     "remove-markdown": "^0.3.0",
     "sass": "^1.26.5"
-
   },
   
   "scripts": {
