@@ -13,6 +13,7 @@ class SearchJobs extends React.Component{
             jobsList:[],
         }
     }
+
     async getJobs(){
         const key=process.env.REACT_APP_API_KEY_JOB;
         const appId=process.env.REACT_APP_APP_ID_ID;
@@ -28,43 +29,40 @@ class SearchJobs extends React.Component{
     componentDidMount(){
         this.getJobs();
 
-    }           
-
-
+    }       
+        
+//the following function will check if this.state.jobList is not undefined .map will called to print out information for each job listing
     checkIfExist(){
-
-
-            if(this.state.jobsList===undefined){
-            }
-            else{
+        if(this.state.jobsList===undefined){}
+        else{
             let jobs=this.state.jobsList.map((res,index)=> {
-                let create=new Date(res.created)
-                let dateCreated=create.getUTCMonth() + "/" +create.getUTCDay() + "/" +create.getUTCFullYear() + " at " + create.getUTCHours() + ":" + create.getUTCMinutes();
-                return <div className="job-search-output-div-class">
-                    <h2 className="job-search-output-class-h2">Title: {removemd(res.title)}</h2> 
-                    <p className="job-search-output-class-p">Category: {res.category.label}</p>
-                    <p className="job-search-output-class-p">Company Name: {res.company.display_name}</p>
-                    <p className="job-search-output-class-p">Contract time: {res.contract_time}</p>
-                    <p className="job-search-output-class-p">Description: {removemd(res.description)}</p>
-                    <a className="job-search-output-class-a" href={res.redirect_url}>&#x1F517;Aditional information </a>
-                    <p className="job-search-output-class-p">Created on: {dateCreated}</p>
-                    <MapSearch lat={res.latitude} lng={res.longitude}/>
-                </div> 
+            let create=new Date(res.created)
+            let dateCreated=create.getUTCMonth() + "/" +create.getUTCDay() + "/" +create.getUTCFullYear() + " at " + create.getUTCHours() + ":" + create.getUTCMinutes();//output date and time for each job listing
+            return (
+                    <div className="job-search-output-div-class">
+                        <h2 className="job-search-output-class-h2">Title: {removemd(res.title)}</h2> 
+                        <p className="job-search-output-class-p"><span class="span-job-map">Category: </span>{res.category.label}</p>
+                        <p className="job-search-output-class-p"><span class="span-job-map">Company Name: </span>{res.company.display_name}</p>
+                        <p className="job-search-output-class-p"><span class="span-job-map">Contract time: </span>{res.contract_time}</p>
+                        <p className="job-search-output-class-p"><span class="span-job-map">Description: </span>{removemd(res.description)}</p>
+                        <a className="job-search-output-class-a" href={res.redirect_url}>&#x1F517;Aditional information </a>
+                        <p className="job-search-output-class-p"><span class="span-job-map">Created on: </span>{dateCreated}</p>
+                        <MapSearch lat={res.latitude} lng={res.longitude}/>
+                    </div>)
             })
             return jobs;
             }
-        }
-        
+    }
 
-    render(){
-           
+    render(){   
         return(
             <div id="main-div-job-search-results">
-             { this.checkIfExist()}
+                { this.checkIfExist()}
             </div>
         )
     }
 }
+
 export default SearchJobs;
 
 

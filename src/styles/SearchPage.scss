@@ -1,13 +1,13 @@
 @import "ReusableComponents";
 
 //SearchPage.js 
-
 #search-page-form-div
 {
     display: flex;
     justify-content: center;
     margin-top: 5px;
 }
+
 #search-form{
     display: flex;
     flex-direction: column;
@@ -16,32 +16,34 @@
     align-items: center;
     background-color: $light_blue_transparent;
     border:groove 2.5px $light_blue;
-
 }
+
 .input-class{
     width: 75px;
     height: 15px;
 }
+
 #form-inputs-div{
     display: flex;
    flex-direction: row;
 }
+
 .input-class{
     width: 170px;
     cursor:text;
     font-family: $noto_sans;
     background-color: rgb(246, 246, 246);
-    
 }
-
 
 #display-select-div{
     display: flex;
     flex-direction: row;
 }
+
 .form-mini-divs{
-margin-right: 15px;
+    margin-right: 15px;
 }
+
 .job-display-p{
     @include font_text_search();
 }
@@ -87,6 +89,8 @@ flex-direction: column;
 text-align: center;
 background-color: $light_blue_transparent;
 border:groove 2.5px $light_blue;
+padding-left: 10px;
+padding-right: 10px;
 }
 
 .job-search-output-class-h2{
@@ -108,6 +112,9 @@ border:groove 2.5px $light_blue;
 .job-search-output-class-a:hover{
     color:$light_blue;
     text-decoration: underline;
+}
+.span-job-map{
+    font-weight: bold;
 }
 
 //MapSearch.js
