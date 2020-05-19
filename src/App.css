@@ -1,6 +1,8 @@
 .App{
   width: 100vw;
+  min-width: 1440px;
   height: 100vh;
+  min-height: 821px;
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
