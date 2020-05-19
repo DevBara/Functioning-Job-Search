@@ -65,7 +65,7 @@ const SignUp = () => {
                     type="password"
                     name="userPassword"
                     value={password}
-                    placeholder="Your Password"
+                    placeholder="Create Your Password"
                     id="userPassword"
                     onChange={event => onChangeHandler(event)}
                     className="password-input"
