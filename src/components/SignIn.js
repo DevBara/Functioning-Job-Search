@@ -34,7 +34,7 @@ const SignIn = () => {
         <div className="sign-in-wrapper">
             <div id="sigin-div">
             <h1 className="sign-in-title">Sign In</h1>
-            <div className="Sign-in-parent">
+            <div className="sign-in-parent">
             {error !== null && <div>{error}</div>}
                 <form className="sign-in-form">
                     <label htmlFor="userEmail" className ="SignInLabel">
@@ -67,7 +67,7 @@ const SignIn = () => {
                     </button>
                 </form>
                     <p className="need-account">
-                        Don't Have An Account?{""}
+                        Don't Have An Account? {""}
                         <Link to ="signup" className="sign-up-link">
                             Sign Up Here
                         </Link> {""}

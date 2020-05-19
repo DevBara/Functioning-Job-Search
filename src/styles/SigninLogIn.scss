@@ -3,10 +3,45 @@
 .sign-in-wrapper{
     @include display_signIn();
     margin-top: 50px;
-    height: auto;
+    height: auto;   
 }
+
+.sign-in-parent{
+    text-align: center;
+}
+
+.sign-in-title{
+    @include sign-text();
+    font-size: 25px;
+}
+
 #sigin-div{
     @include display_signIn();
     padding:25px 55px 35px 55px;
     background-color: $light_blue;
+    border:groove 2.5px $light_blue;
+}
+
+.sign-in-btn{
+    @include buttons();
+}
+
+.need-account{
+    @include sign-text();
+}
+
+.sign-in-form{
+    @include sign-text();
+}
+
+#userEmail{
+    margin-right: 10px;
+}
+
+.sign-up-link{
+    @include sign-text();
+}
+
+.sign-up-link:hover{
+    color:$blue;
 }
