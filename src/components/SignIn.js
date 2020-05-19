@@ -13,7 +13,7 @@ const SignIn = () => {
     const signInWithEmailAndPasswordHandler = 
             (event, email,password) => {
                 event.preventDefault();
-                    window.location = "http://localhost:3000/home";
+                    window.location = "http://localhost:3000/searchjobs";
                   
             }
 

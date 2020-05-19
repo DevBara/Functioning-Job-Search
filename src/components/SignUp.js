@@ -13,7 +13,7 @@ const SignUp = () => {
       const {user} = await auth.createUserWithEmailAndPassword(email, password);
       generateUserDocument(user);
       alert ('You have successfully signed up');
-      window.location = "http://localhost:3000";
+      window.location = "http://localhost:3000/signin";
     }
     
     catch(error){
