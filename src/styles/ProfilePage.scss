@@ -72,6 +72,23 @@
     height: 15%;
     width: 90%;
   }
+
+  #highlights-wrap{
+     
+  }
+
+  #name-display{
+    font-size: 2em;
+    color: $darkest_blue;
+  }
+
+  #location-display, #email-url-display{
+    color: $blue;
+  }
+
+  #highlights-display{
+    color: $darkest_blue;
+  }
   
   #highlights-wrap{
     height: 60%;

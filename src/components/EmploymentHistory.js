@@ -47,6 +47,7 @@ export default class EmploymentHistory extends Component {
         return (
             <div id="employment-section-wrap">
                 <button id="add-button" style={{display:this.state.addButton}} onClick={this.handleAdd}>Add</button>
+                <button id="save-button" style={{display:this.state.saveButton}} onClick={this.handleSave}>Save</button> 
                 <div className="add-employment-wrap" style={{display:this.state.saveButton}}>
                     <div className="title-input-wrap">
                         <input type="text" placeholder="Title" name="title" className="employment-input" 
@@ -68,7 +69,6 @@ export default class EmploymentHistory extends Component {
                             id="duties-input" onChange={this.handleChange} style={{display:this.state.saveButton}}></textarea>
                         </div>
                     </div> 
-                    <button id="save-button" style={{display:this.state.saveButton}} onClick={this.handleSave}>Save</button> 
                 </div>
                 <div className="displayed-employment-wrap">
                     {this.state.cardsAdded}
