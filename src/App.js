@@ -28,10 +28,10 @@ function App() {
           <Switch>
             <Route path="/SearchPage" component={SearchPage} />
             <Route path="/profile" component={ProfilePage} />
+            <Route path="/" component={Application}/>
           </Switch>
         </div>
      </Router>
-        <Application />
     </UserProvider>
   );
 }
