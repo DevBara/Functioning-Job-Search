@@ -29,3 +29,12 @@ $beige:#FFFEFA;
     color:$darkest_blue;
     font-family: $noto_sans;
 }
+
+@mixin sign-text(){
+    color:$darkest_blue;
+    font-family: $noto_sans;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+

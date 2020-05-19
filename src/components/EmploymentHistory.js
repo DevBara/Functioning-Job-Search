@@ -45,30 +45,30 @@ export default class EmploymentHistory extends Component {
     
     render() {
         return (
-            <div employment-section-wrap>
+            <div id="employment-section-wrap">
                 <button id="add-button" style={{display:this.state.addButton}} onClick={this.handleAdd}>Add</button>
-                <div add-employment-wrap style={{display:this.state.saveButton}}>
+                <button id="save-button" style={{display:this.state.saveButton}} onClick={this.handleSave}>Save</button> 
+                <div className="add-employment-wrap" style={{display:this.state.saveButton}}>
                     <div className="title-input-wrap">
                         <input type="text" placeholder="Title" name="title" className="employment-input" 
                         id="title-input" onChange={this.handleChange} style={{display:this.state.saveButton}}></input>
                     </div>
-                    <div className="company-dates-wrap">
-                        <div className="company">
+                    <div className="company-dates-input-wrap">
+                        <div className="company-input">
                             <input type="text" placeholder="Company" name="company" className="employment-input" 
                             id="company-input" onChange={this.handleChange} style={{display:this.state.saveButton}}></input>
                         </div>
-                        <div className="dates">
+                        <div className="dates-input">
                             <input type="text" placeholder="Dates Worker" name="dates" className="employment-input" 
                             id="dates-input" onChange={this.handleChange} style={{display:this.state.saveButton}}></input>
                         </div>
                     </div>
-                    <div className="duties-wrap">
+                    <div className="duties-input-wrap">
                         <div className="duties">
                             <textarea placeholder="Duties" name="duties" className="employment-input" 
                             id="duties-input" onChange={this.handleChange} style={{display:this.state.saveButton}}></textarea>
                         </div>
                     </div> 
-                    <button id="save-button" style={{display:this.state.saveButton}} onClick={this.handleSave}>Save</button> 
                 </div>
                 <div className="displayed-employment-wrap">
                     {this.state.cardsAdded}
