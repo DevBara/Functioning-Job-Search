@@ -1,4 +1,3 @@
-  
 //Elements in this stylesheet are used in different styles within the program
 
 //Font
@@ -6,6 +5,7 @@ $noto_sans: 'Noto Sans', sans-serif;
 
 //Colors
 $light_blue:  #B7D3E3;
+$light_blue_transparent:  rgba(183, 211, 227, 0.431);
 $blue:#0D72A1;
 $darkest_blue: #003b66;
 $grey:#CDD0D5;
@@ -15,4 +15,17 @@ $beige:#FFFEFA;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@mixin buttons(){
+    margin-right: 15px;
+    background-color:$grey;
+    border-radius: 10px; 
+    font-family: $noto_sans; 
+    color: $darkest_blue;
+    margin-top: 10px;
+}
+@mixin font_text_search(){
+    color:$darkest_blue;
+    font-family: $noto_sans;
 }
